@@ -16,24 +16,35 @@ chmod +x final.py
 
 sudo nano /etc/systemd/system/final.service
 
-
+----------------------------------------------------
 
 [Unit]
+
 Description=Final Python Script
+
 After=network.target
 
+
 [Service]
+
 ExecStart=/usr/bin/python3 /home/orangepi/final.py
+
 Restart=always
+
 User=orangepi
 
+
 WorkingDirectory=/home/orangepi
+
 Environment=PYTHONUNBUFFERED=1
 
+
 [Install]
+
 WantedBy=multi-user.target
 
 
+----------------------------------------------------
 
 sudo systemctl daemon-reload
 
